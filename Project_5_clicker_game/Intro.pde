@@ -1,4 +1,5 @@
 void intro() { 
+  theme.play();
   background(255);
   fill(255);
   rect(400, 400, 200, 100);
@@ -7,6 +8,7 @@ void intro() {
   fill(0); 
   textSize(72); 
   text("CLIKER GAME", 400, 200); 
+  text("Start", 400, 400);
 }
 
 void introClicks() { 

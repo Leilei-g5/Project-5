@@ -1,6 +1,17 @@
+
 //Leilei Gu 
 //Unit 5 
 // May 6th 
+
+
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+
 
 //MODE VARIABLES
 int mode; 
@@ -14,7 +25,13 @@ float x, y, d;
 float vx, vy; //target velocity 
 int score, lives; 
 
-// COLOR PALLETTE=---------------------------------------------
+// COLOR PALLETTE---------------------------------------------
+
+
+
+// sound variables--------------------------------------------------
+Minim minim; 
+AudioPlayer theme, success, failure;
 
 //setup
 void setup() { 
@@ -34,6 +51,12 @@ void setup() {
   vy = random(-5, 5); 
   score = 0;
   lives = 3;
+  
+  //minim 
+  minim = new Minim(this); 
+  theme = minim.loadFile("MUSIC.mp3 game audio.mp3");
+  success = minim.loadFile("SUCCESS.wav audio.wav");
+  failure = minim.loadFile("Failure audio.wav");
 }
 
 //draw function

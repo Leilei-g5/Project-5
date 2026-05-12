@@ -9,6 +9,13 @@ void game() {
   fill(255); 
   ellipse(x, y, 100, 100);
   
+  //pause button
+  stroke(0); 
+  fill(255);
+  circle(100, 100, 100); 
+  
+  
+  
   //display
   fill(255); 
   stroke(0); 
@@ -31,7 +38,12 @@ void game() {
 void gameClicks() { 
   if ( dist(mouseX, mouseY, x, y) < 50) {
   score= score +1;
+  success.rewind();
+  success.play();
   } else { 
     lives = lives -1; 
+    failure.rewind();
+    failure.play();
+    if (lives == 0) mode = GAMEOVER;
 }
 }
