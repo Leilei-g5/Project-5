@@ -1,6 +1,6 @@
 void game() { 
   background(0, 255, 0);
-  
+  theme.play();
   fill(0);
   text("Score: " + score, width/2, 30);
   text("Lives: " + lives, width/2, 100);
@@ -40,6 +40,8 @@ void gameClicks() {
   score= score +1;
   success.rewind();
   success.play();
+  } else if (dist(mouseX, mouseY, 100, 100) < 50 ) { 
+    mode = PAUSE;
   } else { 
     lives = lives -1; 
     failure.rewind();
