@@ -36,11 +36,13 @@ void game() {
 }
 
 void gameClicks() { 
-  if ( dist(mouseX, mouseY, x, y) < 50) {
+  if ( dist(mouseX, mouseY, x, y) < d/2) {
   score= score +1;
+  vx = vx * 1.1; 
+  vy = vy * 1.1; 
   success.rewind();
   success.play();
-  } else if (dist(mouseX, mouseY, 100, 100) < 50 ) { 
+  } else if (dist(mouseX, mouseY, 100, 100) < d/2 ) { 
     mode = PAUSE;
   } else { 
     lives = lives -1; 

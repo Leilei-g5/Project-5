@@ -71,7 +71,7 @@ void draw() {
   } else if (mode == GAMEOVER) {
     gameover();
   } else if (mode == OPTIONS) { 
-    options ();
+    options();
   } else {
     println("Error: Mode = " + mode);
   }
