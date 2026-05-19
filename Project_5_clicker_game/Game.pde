@@ -4,7 +4,10 @@ void game() {
   fill(0);
   text("Score: " + score, width/2, 30);
   text("Lives: " + lives, width/2, 100);
-  text("Highscore: " + highscore, width/2, 170);
+  
+  strokeWeight(5); 
+  fill(255); 
+  ellipse(x, y, 100, 100);
   
   //pause button
   stroke(0); 
@@ -14,10 +17,10 @@ void game() {
   
   
   //display
-  fill(SelectedColor);
+  fill(255); 
   stroke(0); 
   strokeWeight(5);
-  circle(x, y, circleSize);
+  circle(x, y, d);
   
   //moving 
   x = x + vx; 
@@ -29,17 +32,15 @@ void game() {
   }
   if (y< d/2 || y > height-d/2) {
     vy = vy * -1;
-  }
+    }
 }
 
 void gameClicks() { 
-  if ( dist(mouseX, mouseY, x, y) < circleSize/2) {
+  if ( dist(mouseX, mouseY, x, y) < 50) {
   score= score +1;
-  vx = vx * 1.1; 
-  vy = vy * 1.1; 
   success.rewind();
   success.play();
-  } else if (dist(mouseX, mouseY, 100, 100) < 50) { 
+  } else if (dist(mouseX, mouseY, 100, 100) < 50 ) { 
     mode = PAUSE;
   } else { 
     lives = lives -1; 
@@ -47,8 +48,4 @@ void gameClicks() {
     failure.play();
     if (lives == 0) mode = GAMEOVER;
 }
-    if (score > highscore) { 
-      highscore = score; 
-    }
-    
 }
