@@ -4,7 +4,7 @@
   color pink          =  #F7AB9C; 
   color SelectedColor = pink;
   float sliderY = 400; 
-  float squareSize = 0;
+  float circleSize = 100;
   
   
 void options() { 
@@ -15,6 +15,8 @@ void options() {
   fill(0); 
   textSize(72); 
   text("OPTIONS", 400, 170);
+  //ok
+  tactileRect(530, 450, 120, 100);
   noFill();
   rect(600, 500, 100, 100);
   text("OK", 600, 500);
@@ -41,12 +43,12 @@ void options() {
   fill(255);
   stroke(0);
   circle(200, sliderY, 30);
-  squareSize = map(sliderY, 400, 600, 10, 100);
+  circleSize = map(sliderY, 400, 600, 10, 255);
   
   //indicator
   stroke(0);
   fill(SelectedColor); 
-  square (400, 500, squareSize);
+  circle (400, 500, circleSize);
   
 }
 void optionsClicks() {
@@ -82,7 +84,7 @@ if (dist(x, y, mouseX, mouseY) < r) {
 if (mouseX > 175 && mouseX < 225 && mouseY > 400 && mouseY < 600) { 
     sliderY = mouseY;
   // size
-   squareSize = map(sliderY, 400, 600, 0, 255); 
+   circleSize = map(sliderY, 400, 600, 10, 255); 
   }
 
 } 

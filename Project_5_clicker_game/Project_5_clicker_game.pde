@@ -15,16 +15,17 @@ import ddf.minim.ugens.*;
 
 //MODE VARIABLES
 int mode; 
-final int INTRO    = 0;
-final int GAME     = 1; 
-final int PAUSE    = 2;
-final int GAMEOVER = 3;
-final int OPTIONS  = 4;
+final int INTRO     = 0;
+final int GAME      = 1; 
+final int PAUSE     = 2;
+final int GAMEOVER  = 3;
+final int OPTIONS   = 4;
+final int HIGHSCORE = 5;
 
 // TARGET VARIABLES--------------------------------------------
 float x, y, d;
 float vx, vy; //target velocity 
-int score, lives; 
+int score, lives, highscore;
 
 // COLOR PALLETTE---------------------------------------------
 
@@ -58,6 +59,9 @@ void setup() {
   theme = minim.loadFile("MUSIC.mp3 game audio.mp3");
   success = minim.loadFile("SUCCESS.wav audio.wav");
   failure = minim.loadFile("Failure audio.wav");
+  
+  //reset 
+  reset();
 }
 
 //draw function
