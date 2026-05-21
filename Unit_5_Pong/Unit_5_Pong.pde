@@ -12,6 +12,10 @@ final int GAMEOVER = 4;
 //entity variables
 float leftx, lefty, leftd, rightx, righty, rightd; //paddles
 float ballx, bally, balld; //ball
+float vx, vy; 
+
+//scoring 
+int leftscore, rightscore, timer;
 
 //keyboard variables 
 boolean wkey, skey, upkey, downkey;
@@ -33,6 +37,12 @@ void setup() {
   ballx = width/2; 
   bally = height/2; 
   balld = 100;
+  vx = random(-3, 3); 
+  vy = random(-3, 3); 
+  
+  //initialize score 
+  rightscore = leftscore = 0; 
+  timer = 100;
   
   //initialize keyboard vars
   wkey = skey = upkey = downkey = false;
