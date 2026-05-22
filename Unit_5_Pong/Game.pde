@@ -2,7 +2,10 @@ void game () {
   background(0);
   
   //paddles 
+  stroke(255);
+  fill(255, 100, 100);
   circle(leftx, lefty, leftd); 
+  fill(48, 240, 117); 
   circle(rightx, righty, rightd);
   
   //center line 
@@ -12,11 +15,14 @@ void game () {
   
   //scoreboard 
   textSize(50); 
-  fill(255); 
+  fill(255, 100, 100); 
   text(leftscore, width/4, 100); 
-  fill(255); 
+  fill(48, 240, 117); 
   text(rightscore, 3*width/4, 100);
+  fill(48, 240, 117); 
   text(timer, 3*width/4, 550);
+  fill(255, 100, 100);
+  text(timer, width/4, 550);
   timer = timer - 1;
   
   
@@ -41,10 +47,11 @@ void game () {
     bally = height/2;
     timer = 100; 
   }
-  if (bally > 800) { 
+  if (ballx > 900) { 
     leftscore++; 
     ballx = width/2; 
     bally = height/2; 
+    timer = 100;
   }
     
   
@@ -52,17 +59,19 @@ void game () {
   if (bally <= balld/2 || bally >= height-balld/2) { 
     vy = vy * -1; 
   } 
-  if (ballx <= balld/2 || ballx >= height - balld/2) { 
-    vx = vx * 1; 
-  }
+  //if (ballx <= balld/2 || ballx >= height - balld/2) { 
+    //vx = vx * 1; 
+ // }
   if (dist(ballx, bally, rightx, righty) < balld/2 + rightd/2) { 
-    vx = (ballx-rightx)/10; 
-    vy = (bally-righty)/10; 
+    vx = (ballx - rightx)/10; 
+    vy = (bally - righty)/10; 
   }
   if (dist(ballx, bally, leftx, lefty) < balld/2 + leftd/2) { 
-    vx = (ballx-leftx)/10; 
-    vy = (bally-lefty)/10;
+    vx = (ballx - leftx)/10; 
+    vy = (bally - lefty)/10;
   }
+  //paddle 
+  
 }
 
 void gameClicks () {

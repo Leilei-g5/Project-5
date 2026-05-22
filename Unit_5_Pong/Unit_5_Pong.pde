@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 // Leilei Gu 2-4
 // Unit 5 
 // May 20
@@ -20,9 +27,15 @@ int leftscore, rightscore, timer;
 //keyboard variables 
 boolean wkey, skey, upkey, downkey;
 
+
+// sound variables--------------------------------------------------
+Minim minim; 
+AudioPlayer theme, success, failure;
+
+
 void setup() {
   size(800, 600); 
-  mode = GAME;
+  mode = INTRO;
   
   //initialize paddles
   leftx = 0; 
@@ -46,6 +59,13 @@ void setup() {
   
   //initialize keyboard vars
   wkey = skey = upkey = downkey = false;
+  
+  //minim 
+  minim = new Minim(this); 
+  theme = minim.loadFile("MUSIC.mp3 game audio.mp3");
+  success = minim.loadFile("SUCCESS.wav audio.wav");
+  failure = minim.loadFile("Failure audio.wav");
+  
 }
 
 void draw () { 
