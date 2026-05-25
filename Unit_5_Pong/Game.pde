@@ -29,8 +29,20 @@ void game () {
   //move paddles 
   if (wkey == true) lefty = lefty - 5; 
   if (skey == true) lefty = lefty + 5;
-  if (upkey == true) righty = righty -5; 
-  if (downkey == true) righty = righty + 5;
+  
+  if (AI == false) {
+    if (upkey == true) righty = righty -5; 
+    if (downkey == true) righty = righty + 5;
+  } else { 
+  
+    /* 
+    
+    if the ball is on the right side { 
+      if ball is above the right paddle, move up 
+      if ball is below the right paddle, move down 
+    } 
+    */ 
+  }
   
   //ball
   circle(ballx, bally, balld);
@@ -41,7 +53,7 @@ void game () {
   bally = bally + vy;
   }
   //scoring 
-  if (ballx < 0) { 
+  if (ballx < -100) { 
     rightscore++; 
     ballx = width/2; 
     bally = height/2;

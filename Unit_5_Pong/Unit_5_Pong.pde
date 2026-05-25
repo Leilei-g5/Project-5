@@ -20,6 +20,8 @@ final int GAMEOVER = 4;
 float leftx, lefty, leftd, rightx, righty, rightd; //paddles
 float ballx, bally, balld; //ball
 float vx, vy; 
+boolean AI; 
+
 
 //scoring 
 int leftscore, rightscore, timer;
