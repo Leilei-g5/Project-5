@@ -34,14 +34,16 @@ void game () {
     if (upkey == true) righty = righty -5; 
     if (downkey == true) righty = righty + 5;
   } else { 
-  
-    /* 
-    
-    if the ball is on the right side { 
-      if ball is above the right paddle, move up 
-      if ball is below the right paddle, move down 
-    } 
-    */ 
+    if (ballx > width/2) { 
+      
+      if (bally < righty) {
+        righty = righty -5; 
+      }
+      
+      if (bally > righty) { 
+        righty = righty + 5;
+      }   
+    }
   }
   
   //ball
@@ -71,9 +73,6 @@ void game () {
   if (bally <= balld/2 || bally >= height-balld/2) { 
     vy = vy * -1; 
   } 
-  //if (ballx <= balld/2 || ballx >= height - balld/2) { 
-    //vx = vx * 1; 
- // }
   if (dist(ballx, bally, rightx, righty) < balld/2 + rightd/2) { 
     vx = (ballx - rightx)/10; 
     vy = (bally - righty)/10; 
@@ -87,5 +86,7 @@ void game () {
 }
 
 void gameClicks () {
-  
+  if (dist(mouseX, mouseY, 100, 100) < 50) { 
+    mode = PAUSE;
+}
 }

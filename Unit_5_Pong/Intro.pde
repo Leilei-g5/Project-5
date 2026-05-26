@@ -1,8 +1,8 @@
 void intro() { 
   theme.play();
-  background (198, 155, 126); 
+  background (221, 252, 194); 
   //Pong 
-  fill(255, 0, 0); 
+  fill(82, 104, 240); 
   textSize(180);
   text( "PONG", 200, 250);
   // 1 person button
@@ -27,20 +27,17 @@ void tactileRect(int x, int y, int w, int h) {
     stroke(0);
   }
 }
-  boolean clickedOnRect(int x, int y, int w, int h) { 
-    return mouseX > x  && mouseX < x + w && mouseY > y && mouseY < y + h; 
-  }
 
 void introClicks () {
 // 1 player 
-if (clickedOnRect(90, 380, 220, 100)) { 
+if (mouseX > 90 && mouseX < 310 && mouseY > 380 && mouseY < 480){ 
   mode = GAME; 
   theme.pause(); 
   theme.rewind(); 
   AI = true; 
 }
 //2 player 
-if (clickedOnRect(490, 380, 220, 100)) { 
+if (mouseX > 490 && mouseX < 610 && mouseY > 380 && mouseY < 480){ 
   mode = GAME; 
   theme.pause(); 
   theme.rewind();
