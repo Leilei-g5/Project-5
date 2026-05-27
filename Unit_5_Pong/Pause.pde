@@ -1,10 +1,10 @@
 void pause() { 
   theme.pause();
-  fill(0);
-  text("PAUSE", 400, 400);
+  fill(255, 0, 0);
+  textSize(160);
+  text("PAUSED", 140, 350);
 }
 void pauseClicks () {
-  if (dist(mouseX, mouseY, 100, 100) < 50) { 
     mode = GAME; 
+    theme.play();
   }
-}

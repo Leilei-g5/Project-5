@@ -32,7 +32,7 @@ boolean wkey, skey, upkey, downkey;
 
 // sound variables--------------------------------------------------
 Minim minim; 
-AudioPlayer theme, success, failure;
+AudioPlayer theme, success;
 
 
 void setup() {
@@ -57,7 +57,7 @@ void setup() {
   
   //initialize score 
   rightscore = leftscore = 0; 
-  timer = 100;
+ timer = 100;
   
   //initialize keyboard vars
   wkey = skey = upkey = downkey = false;
@@ -66,7 +66,9 @@ void setup() {
   minim = new Minim(this); 
   theme = minim.loadFile("MUSIC.mp3 game audio.mp3");
   success = minim.loadFile("SUCCESS.wav audio.wav");
-  failure = minim.loadFile("Failure audio.wav");
+  
+  //reset 
+  reset(); 
   
 }
 

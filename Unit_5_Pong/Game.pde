@@ -1,6 +1,6 @@
 void game () {
   background(0);
-  
+  theme.play();
   //paddles 
   stroke(255);
   fill(255, 100, 100);
@@ -20,9 +20,9 @@ void game () {
   fill(48, 240, 117); 
   text(rightscore, 3*width/4, 100);
   fill(48, 240, 117); 
-  text(timer, 3*width/4, 550);
+  //text(timer, 3*width/4, 550);
   fill(255, 100, 100);
-  text(timer, width/4, 550);
+  //text(timer, width/4, 550);
   timer = timer - 1;
   
   
@@ -36,17 +36,16 @@ void game () {
   } else { 
     if (ballx > width/2) { 
       
-      if (bally < righty) {
-        righty = righty -5; 
-      }
+      if (bally < righty) righty = righty -5;
       
-      if (bally > righty) { 
-        righty = righty + 5;
-      }   
+      if (bally > righty) righty = righty + 5;  
     }
   }
   
   //ball
+  strokeWeight(5);
+  stroke(255);
+  fill(82, 196, 255);
   circle(ballx, bally, balld);
   
   //move ball 
@@ -60,12 +59,14 @@ void game () {
     ballx = width/2; 
     bally = height/2;
     timer = 100; 
+    if (rightscore == 3) mode = GAMEOVER;
   }
   if (ballx > 900) { 
     leftscore++; 
     ballx = width/2; 
     bally = height/2; 
     timer = 100;
+    if (leftscore == 3) mode = GAMEOVER;
   }
     
   
@@ -86,7 +87,5 @@ void game () {
 }
 
 void gameClicks () {
-  if (dist(mouseX, mouseY, 100, 100) < 50) { 
     mode = PAUSE;
-}
 }
