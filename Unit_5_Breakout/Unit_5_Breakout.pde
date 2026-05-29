@@ -38,7 +38,7 @@ int [] y;
 void setup() {
   background(0);
   size(800, 800);
-  mode = INTRO;
+  mode = GAME;
   
   //set up paddle and ball 
   bx = width/2;
@@ -51,6 +51,7 @@ void setup() {
   vy = 1; 
 
   //set up array of bricks 
+  brickd = 50;
   x = new int[3]; 
   y = new int[3]; 
   
