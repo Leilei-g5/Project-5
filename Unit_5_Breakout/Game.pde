@@ -26,9 +26,15 @@ void game () {
   }
   
   //bricks-----------------------
-  circle( x[0], y[0], 100);
-  circle( x[1], y[1], 100);
-  circle( x[2], y[2], 100);
+  int i=0; 
+  while (i<n) {
+    circle(x[i], y[i], brickd);
+     if (dist(bx, by, x[i], y[i]) < bd/2 + brickd/2) { //brick collisions
+    vx = (bx - x[i])/10;
+    vy = (by - y[i])/10; 
+  }
+    i=i+1;
+  }
 }
 
 

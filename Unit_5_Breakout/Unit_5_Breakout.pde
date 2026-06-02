@@ -32,12 +32,16 @@ Minim minim;
 // Brick Variables 
 int [] x; 
 int [] y;
+boolean [] alive; 
+int brickd; 
+int n; 
+int tempx, tempy; 
 
 //set up array of bricks 
 
 void setup() {
   background(0);
-  size(800, 800);
+  size(900, 900);
   mode = GAME;
   
   //set up paddle and ball 
@@ -52,19 +56,23 @@ void setup() {
 
   //set up array of bricks 
   brickd = 50;
-  x = new int[3]; 
-  y = new int[3]; 
+  n = 32;
+  x = new int[n]; 
+  y = new int[n];
+  tempx = 100;
+  tempy = 100;
+  int i=0; 
+  while (i<n) {
+    x[i] = tempx;
+    y[i] = tempy;
+    tempx = tempx + 100;
+    if (tempx == width) { 
+      tempx = 100;
+      tempy = tempy + 100; 
+    }
+    i=i+1;
+  }
   
-  x[0] = 100; 
-  y[0] = 100;
-  
-  x[1] = 400; 
-  y[1] = 100; 
-  
-  x[2] = 700;
-  y[2] = 100;
- 
- 
 } 
 
 
