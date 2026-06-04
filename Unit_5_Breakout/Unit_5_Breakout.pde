@@ -22,6 +22,7 @@ float a;
 
 //Game entities 
 float bx, by, bd, vx, vy, px, py, pd; 
+int score, lives; 
 
 //Keyboard variables 
 boolean akey, dkey; 
@@ -37,12 +38,19 @@ int brickd;
 int n; 
 int tempx, tempy; 
 
+//Colour
+color red      = #FF4040;
+color orange   = #FF8A40;
+color yellow   = #F8FF40;
+color green    = #40FF68;
+color darkblue = #0B1B71;
+
 //set up array of bricks 
 
 void setup() {
   background(0);
   size(900, 900);
-  mode = GAME;
+  mode = INTRO;
   
   //set up paddle and ball 
   bx = width/2;
@@ -53,18 +61,23 @@ void setup() {
   pd = 100; 
   vx = 0; 
   vy = 1; 
+  
+  //initialize keyboard vars 
+  akey = dkey = false;
 
   //set up array of bricks 
   brickd = 50;
   n = 32;
   x = new int[n]; 
   y = new int[n];
+  alive = new boolean[n]; 
   tempx = 100;
   tempy = 100;
   int i=0; 
   while (i<n) {
     x[i] = tempx;
     y[i] = tempy;
+    alive[i] = true;
     tempx = tempx + 100;
     if (tempx == width) { 
       tempx = 100;
