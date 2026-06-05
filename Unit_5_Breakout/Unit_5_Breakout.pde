@@ -44,6 +44,7 @@ color orange   = #FF8A40;
 color yellow   = #F8FF40;
 color green    = #40FF68;
 color darkblue = #0B1B71;
+color pink     = #EA1190;
 
 //set up array of bricks 
 

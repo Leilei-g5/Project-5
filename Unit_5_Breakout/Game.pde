@@ -1,8 +1,9 @@
 void game () {
   background(darkblue);
-  
-  text("Score: " + score, 30, 730);
-  text("Lives: " + lives, 500, 730);
+  fill(pink);
+  textSize(40);
+  text("Score: " + score, 50, 730);
+  text("Lives: " + lives, 630, 730);
   
   //paddle-------------------------------
   fill(255); 
@@ -40,6 +41,7 @@ void game () {
 
 
 void gameClicks() {
+  mode = PAUSE;
   
 }
 
