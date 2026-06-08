@@ -17,6 +17,11 @@ final int GAME     = 2;
 final int PAUSE    = 3; 
 final int GAMEOVER = 4; 
 
+//gif 
+PImage[] gif;
+int numberOfFrames;
+int f;
+
 // intro GUI 
 float a; 
 
@@ -52,6 +57,22 @@ void setup() {
   background(0);
   size(900, 900);
   mode = INTRO;
+  
+  //gif 
+  numberOfFrames = 30;
+  gif = new PImage [numberOfFrames];
+  
+  int m = 0;
+  while (m < numberOfFrames) { 
+  gif[m] = loadImage("frame_"+m+"_delay-0.03s.gif");
+  m++; 
+  }
+  println(gif[0]);
+  
+  //Word Font 
+  PFont myFont= loadFont("Magneto-Bold-48.vlw"); 
+  textFont(myFont);
+  
   
   //set up paddle and ball 
   bx = width/2;
