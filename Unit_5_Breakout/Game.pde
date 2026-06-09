@@ -22,11 +22,21 @@ void game () {
     vx = (bx - px)/10;
     vy = (by - py)/10; 
   }
-  if (by < bd/2 || by > height - bd/2) { //bounce off top 
+  if (by < bd/2) { //bounce off top 
      vy = vy * -1; 
   }
   if (bx < bd/2 || bx > width - bd/2) { //bounce off side 
      vx = vx * -1; 
+  }
+  if (by > height + bd/2) { 
+    lives = lives - 1;
+    bx = width/2; 
+    by= height/2;
+    vx = random(-5, 5); 
+    vy = -5;
+  if (lives <= 0); {
+       mode = GAMEOVER; 
+     }
   }
   
   //bricks-----------------------
@@ -42,7 +52,6 @@ void game () {
 
 void gameClicks() {
   mode = PAUSE;
-  
 }
 
 void manageBrick (int i) {
@@ -55,5 +64,6 @@ void manageBrick (int i) {
     vx = (bx - x[i])/10;
     vy = (by - y[i])/10; 
     alive[i] = false; 
+    score =score +1; 
   }
 }

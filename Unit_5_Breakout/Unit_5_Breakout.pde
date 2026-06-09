@@ -59,14 +59,14 @@ void setup() {
   mode = INTRO;
   
   //gif 
-  numberOfFrames = 30;
+ numberOfFrames = 30;
   gif = new PImage [numberOfFrames];
   
   int m = 0;
   while (m < numberOfFrames) { 
   gif[m] = loadImage("frame_"+m+"_delay-0.03s.gif");
   m++; 
-  }
+ }
   println(gif[0]);
   
   //Word Font 
@@ -83,6 +83,10 @@ void setup() {
   pd = 100; 
   vx = 0; 
   vy = 1; 
+  
+  //score and lives
+  score = 0;
+  lives = 3;
   
   //initialize keyboard vars 
   akey = dkey = false;
