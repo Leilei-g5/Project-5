@@ -1,4 +1,5 @@
 void pause() { 
+theme.play();
 image(gif[f], 0, 0, width, height);
 textSize(100);
 fill(0); 

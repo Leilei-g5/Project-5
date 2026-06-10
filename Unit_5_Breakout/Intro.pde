@@ -1,4 +1,5 @@
 void intro () { 
+theme.play();
 image(gif[f], 0, 0, width, height);
 fill(0); 
 text("Breakout!", 170, 520);

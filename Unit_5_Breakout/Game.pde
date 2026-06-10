@@ -1,4 +1,5 @@
 void game () {
+  theme.play();
   background(darkblue);
   fill(pink);
   textSize(40);
@@ -28,15 +29,13 @@ void game () {
   if (bx < bd/2 || bx > width - bd/2) { //bounce off side 
      vx = vx * -1; 
   }
-  if (by > height + bd/2) { 
-    lives = lives - 1;
-    bx = width/2; 
-    by= height/2;
-    vx = random(-5, 5); 
-    vy = -5;
-  if (lives <= 0); {
-       mode = GAMEOVER; 
-     }
+  if (by > height) {
+   lives = lives - 1;
+   failure.rewind();
+   failure.play();
+   bx = width/2; 
+   by = height/2;
+  if (lives == 0) mode = GAMEOVER; 
   }
   
   //bricks-----------------------
@@ -65,5 +64,8 @@ void manageBrick (int i) {
     vy = (by - y[i])/10; 
     alive[i] = false; 
     score =score +1; 
+    success.rewind();
+    success.play();
+    if (score == 32) mode = GAMEOVER;
   }
 }
