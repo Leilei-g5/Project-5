@@ -4,12 +4,12 @@ void gameover () {
   fill(0); 
   if (bluescore == 3) {
   background(64, 196, 255);
-  text("BLUE WIN", 180, 440);
+  text("BLUE WIN", 60, 440);
   }
   fill(0);
   if (redscore == 3) {
   background(255, 41, 41);
-  text("RED WIN", 190, 440);
+  text("RED WIN", 150, 440);
 } 
 }
 

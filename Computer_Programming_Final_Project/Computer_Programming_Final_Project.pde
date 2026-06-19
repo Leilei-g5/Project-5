@@ -53,7 +53,7 @@ void setup() {
   success = minim.loadFile("SUCCESS.wav audio.wav");
 
   //Word Font 
-  PFont myFont = loadFont("BerlinSansFBDemi-Bold-48.vlw"); 
+  PFont myFont = loadFont("CopperplateGothic-Bold-48.vlw"); 
   textFont(myFont);
 }
 

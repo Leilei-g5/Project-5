@@ -12,8 +12,8 @@ rect(0, 275, 1000, 250);
 strokeWeight(3);
 stroke(0);
 fill(255, 227, 13);
-triangle(500, centery, 450, centery+20, 500, centery+40);
-triangle(500, centery, 550, centery+20, 500, centery+40);
+triangle(500, centery-20, 450, centery, 500, centery+20);
+triangle(500, centery-20, 550, centery, 500, centery+20);
 
 //rope
 fill(255, 161, 8);
@@ -27,8 +27,8 @@ fill(255);
 //exit
 circle(1000, 400, 100);
 fill(0);
-textSize(20);
-text ("Exit", 965, 410);
+textSize(18);
+text ("Exit", 960, 410);
 
 // blue circle representing player 1 
 fill(64, 196, 255);

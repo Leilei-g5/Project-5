@@ -1,15 +1,15 @@
 void intro() { 
     theme.play();
-    background(245, 203, 161);
+    background(80, 203, 145);
     // Tug of War
-    fill(0);
-    textSize(130);
+    fill(207, 252, 208);
+    textSize(100);
     text ("Pull The Rope", 120, 400);
     //start buttom 
     tactileRect(380, 500, 240, 130);
     noFill(); 
     rect(380, 500, 240, 130);
-    textSize(100);
+    textSize(60);
     fill(0);
     text("Start", 400, 600);
 }
